@@ -19,28 +19,14 @@ Painter.prototype.sumVolume = function (){
 }
 
 Painter.prototype.enoughPaintForRoom = function (room){
-  var paint_volume = 0;
-  for (const paint of this.stock){
-    paint_volume += paint.volume
-  }
-
-  var paint_needed = room.area * 1;
-  if(paint_volume >= paint_needed){
+  var _this = this;
+  if(_this.sumVolume() >= room.area){
     return true;
   }
   else {
     return false;
   }
 }
-// Painter.prototype.enoughPaintForRoom = function (room){
-//   var _this = this;
-//   if(_this.sumVolume >= room.area){
-//     return true;
-//   }
-//   else {
-//     return false;
-//   }
-// }
 
 
 
